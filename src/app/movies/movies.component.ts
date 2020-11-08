@@ -22,5 +22,4 @@ export class MoviesComponent implements OnInit {
     this.movieService.getMovies()
       .subscribe(movies => this.movies = movies);
   }
-
 }
