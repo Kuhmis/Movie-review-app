@@ -1,0 +1,10 @@
+<div *ngIf="movie">
+  <h2>"{{movie.name | uppercase}}" Reviews</h2>
+  <ul class="reviews">
+    <li *ngFor="let review of reviews">
+      <a>
+        <span class="badge">{{review.id}}</span> {{review.name}}
+      </a>
+    </li>
+  </ul>
+</div>

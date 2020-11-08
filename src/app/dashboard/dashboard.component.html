@@ -1,0 +1,19 @@
+<h3>Genres</h3>
+<div>
+  <div class="grid grid-pad">
+    <a *ngFor="let genre of genres" class="col-1-10">
+      <div class="module genre">
+        <div>{{genre.name}}</div>
+      </div>
+    </a>
+  </div>
+
+  <h5>Movie list</h5>
+  <ul class="movies">
+    <li *ngFor="let movie of movies">
+      <a routerLink="/detail/{{movie.id}}">
+        <span class="badge">{{movie.id}}</span> {{movie.name}}
+      </a>
+    </li>
+  </ul>
+</div>
