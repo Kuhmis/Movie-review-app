@@ -12,8 +12,8 @@ import { AuthGuard } from './full-login/_helpers/auth.guard';
 
 const routes: Routes = [
   { path: 'movies', component: MoviesComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: '/explore', pathMatch: 'full' },
+  { path: 'explore', component: DashboardComponent },
   { path: 'detail/:id', component: MovieDetailComponent },
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SidebarModule } from 'ng-sidebar';
 
 // fake backend
 import { fakeBackendProvider } from './full-login/_helpers/fake-backend';
@@ -19,6 +20,7 @@ import { RegisterComponent } from './full-login/register/register.component';
 import { AlertComponent } from './full-login/_components/alert.component';
 import { HomeComponent } from './full-login/home/home.component';
 import { ReviewComponent } from './components/review/review.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { ReviewComponent } from './components/review/review.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SidebarModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

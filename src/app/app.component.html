@@ -1,11 +1,13 @@
 <h1>Movie reviews</h1>
 <nav class="navbar navbar-expand navbar-dark bg-dark">
   <div class="navbar-nav">
-      <a class="nav-item nav-link" routerLink="/dashboard">Explore</a>
+      <a class="nav-item nav-link" routerLink="/explore">Explore</a>
       <a class="nav-item nav-link" routerLink="/movies">Watchlist</a>
       <a class="nav-item nav-link" routerLink="/home">Account</a>
-      <!--<a class="nav-item nav-link" (click)="logout()">Logout</a>-->
-      <a class="nav-item nav-link">Search</a>
+      <div class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-item btn-secondary" type="submit">Search</button>
+      </div>
   </div>
 </nav>
 
