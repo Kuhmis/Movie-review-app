@@ -1,7 +1,8 @@
 <h2>Watchlist</h2>
-<h3>
-  <button>Add movie</button>
-</h3>
+<div class="form-inline">
+  <input class="form-control mr-sm-2" type="text" placeholder="Movie name" aria-label="Movie name">
+  <button class="btn btn-item btn-secondary" type="submit">Add</button>
+</div>
 <ul class="movies">
   <li *ngFor="let movie of movies">
     <a routerLink="/detail/{{movie.id}}">
@@ -9,4 +10,3 @@
     </a>
   </li>
 </ul>
-
