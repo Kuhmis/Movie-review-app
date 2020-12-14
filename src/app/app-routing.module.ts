@@ -8,6 +8,7 @@ import { HomeComponent } from './full-login/home/home.component';
 import { LoginComponent } from './full-login/login/login.component';
 import { RegisterComponent } from './full-login/register/register.component';
 import { AuthGuard } from './full-login/_helpers/auth.guard';
+import { ReviewComponent } from './components/review/review.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'review', component: ReviewComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }

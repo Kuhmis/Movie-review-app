@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SidebarModule } from 'ng-sidebar';
 
@@ -21,6 +21,7 @@ import { AlertComponent } from './full-login/_components/alert.component';
 import { HomeComponent } from './full-login/home/home.component';
 import { ReviewComponent } from './components/review/review.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TextsComponent } from './components/texts/texts.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AlertComponent,
     HomeComponent,
     ReviewComponent,
+    TextsComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     SidebarModule.forRoot(),
     BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
-import { Movie } from '../index/movie';
+//import { Movie } from '../index/watch';
 import { MovieService } from '../services/movie.service';
 
 @Component({
@@ -10,16 +11,37 @@ import { MovieService } from '../services/movie.service';
 })
 export class MoviesComponent implements OnInit {
 
-  movies: Movie[];
+  newMovie: string;
+  movies: any;
+  movieObj: any;
 
-  constructor(private movieService: MovieService) { }
+  constructor() {
+   this.newMovie = '';
+   this.movies = [];
+  }
+  
+  addMovie(event){
+    this.movieObj = {
+      newMovie: this.newMovie,
+      completed: false
+    }
+    this.movies.push(this.movieObj);
+    this.newMovie = '';
+    event.preventDefault();
+  }
+  deleteMovie(index) {
+    this.movies.splice(index, 1);
+  }
 
+  deleteSelectedMovies() {
+    //need ES5 to reverse loop in order to splice by index
+    for(var i=(this.movies.length -1); i > -1; i--) {
+      if(this.movies[i].completed) {
+        this.movies.splice(i, 1);
+      }
+    }
+  }
   ngOnInit(): void {
-    this.getMovies();
   }
 
-  getMovies(): void {
-    this.movieService.getMovies()
-      .subscribe(movies => this.movies = movies);
-  }
 }

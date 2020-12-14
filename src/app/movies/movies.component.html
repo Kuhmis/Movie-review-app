@@ -1,5 +1,5 @@
 <h2>Watchlist</h2>
-<div class="form-inline">
+<!--<div class="form-inline">
   <input class="form-control mr-sm-2" type="text" placeholder="Movie name" aria-label="Movie name">
   <button class="btn btn-item btn-secondary" type="submit">Add</button>
 </div>
@@ -9,4 +9,35 @@
       <span class="badge">{{movie.id}}</span> {{movie.name}}
     </a>
   </li>
-</ul>
+</ul>-->
+
+<div class="movies">
+
+  <div>
+    <form (submit)="addMovie($event)">
+      <input [(ngModel)]="newMovie" (keyup.enter)="newMovie=''" class="textfield" name="newMovie">
+        <button  type="submit" [disabled]="newMovie===''">Add Movie</button>
+    </form>
+  </div>
+
+  <div [hidden]="newMovie">
+    Type in a new movie...
+  </div>
+
+  <div [hidden]="!newMovie">
+    Typing: {{ newMovie }}
+  </div>
+
+  <ul>
+  <li *ngFor="let movie of movies; let i=index">
+    <input type="checkbox" class="checkbox" [(ngModel)]="movie.completed" />
+  <span [ngClass]="{'checked': movie.completed}">{{ movie.newMovie }}</span>
+  <span (click)="deleteMovie(i)" class="delete-icon">[X]</span>
+  </li>
+  </ul>
+
+    <div class="mtop20">
+  <button (click)="deleteSelectedMovies()">Delete Selected</button>
+  </div>
+
+</div>
